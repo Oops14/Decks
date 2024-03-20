@@ -40,4 +40,7 @@ export const decksApi = {
   addDeck(title: string) {
     return instance.post<Deck>(`/v1/decks`, {name: title})
   },
+  deleteDeck(id: string) {
+    return instance.delete(`/v1/decks/${id}`)
+  },
 }

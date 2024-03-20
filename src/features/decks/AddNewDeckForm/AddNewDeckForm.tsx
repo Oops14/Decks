@@ -10,6 +10,7 @@ type FormValues = {
 export const AddNewDeckForm = () => {
   const {
     register,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>({
@@ -21,7 +22,9 @@ export const AddNewDeckForm = () => {
   const dispatch = useAppDispatch()
 
   const onSubmit = (data: FormValues) => {
-    dispatch(addDesckTC(data.name))
+    dispatch(addDesckTC(data.name)).then(() => {
+      reset()
+    })
   }
 
   return (
