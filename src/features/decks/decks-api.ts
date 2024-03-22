@@ -43,4 +43,7 @@ export const decksApi = {
   deleteDeck(id: string) {
     return instance.delete(`/v1/decks/${id}`)
   },
+  updateDeck(id: string, newTitle: string) {
+    return instance.patch(`/v1/decks/${id}`, {name: newTitle});
+  },
 }
